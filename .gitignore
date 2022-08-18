@@ -1,3 +1,8 @@
+# I don't want the notebook(s) to be added as I'm just using them more as a repl
+notebook/
+notebooks/
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
