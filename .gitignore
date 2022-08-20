@@ -2,6 +2,8 @@
 notebook/
 notebooks/
 
+# Storing tokens on github would be a really bad idea too 
+tokens/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
