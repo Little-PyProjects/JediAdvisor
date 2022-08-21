@@ -1,7 +1,7 @@
-#import schedule
-#jimport time
+# import schedule
+# jimport time
 import tweepy
-from random import sample
+from random import sample, randint
 
 
 def get_keys():
@@ -18,7 +18,6 @@ def authenticate(api_key, api_key_secret, access_token, access_token_secret):
     return
 
 
-'''
 def get_line_count(file) -> int:
     """
     Calculates the number of lines in file.
@@ -28,31 +27,22 @@ def get_line_count(file) -> int:
         line_count = sum(1 for _ in f)
     return line_count
 
-'''
-
-def enum_sayings(file):
-    with open(file) as f:
-        for (num, saying) in enumerate(f):
-            return num, saying
-
-def gen_random_num():
-     indexes = [i for i in range(line_count)]
-     return sample(indexes)
-
-
-def gen_order(line_count: int):
-    indexes = [i for i in range(line_count)]
-    order = sample(indexes, len(indexes))
-
 
 def get_todays_saying():
-   return sample()
-
+   todays_num = randint(0, 128)    
+   print(f"Today's saying is {todays_num}")
+   '''
+    with open(file) as f:
+        for (num, saying) in enumerate(f):
+           return(num, saying)
+    #return sample()
+    '''
 
 def get_saying():
-    pass    
+    pass
 
-'''
+
+"""
 def job():
     print("I'm working...")
 
@@ -63,9 +53,7 @@ def job():
     while 1:
         schedule.run_pending()
         time.sleep(1)
-'''
-
-
+"""
 
 
 if __name__ == "__main__":
@@ -83,12 +71,7 @@ if __name__ == "__main__":
     except:
         print("There is an error in authentication")
 
-    sayings = enum_sayings(file)    
-    print(sayings)
+    num_lines = get_line_count(file)
+    print (f"There are {num_lines} sayings in the file")
 
-
-
-
-    index = get_todays_saying()
-    
-    # job(get_saying)
+    get_todays_saying()
