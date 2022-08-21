@@ -11,6 +11,9 @@ def get_keys():
 
 
 def authenticate(api_key, api_key_secret, access_token, access_token_secret):
+    """
+    Authenticates identity to Twitter
+    """
     authenticator = tweepy.OAuthHandler(api_key, api_key_secret)
     authenticator.set_access_token(access_token, access_token_secret)
 
@@ -28,20 +31,20 @@ def get_line_count(file) -> int:
     return line_count
 
 
-def get_todays_saying():
+def get_todays_number():    
+    """
+    Generates random number for today 
+    """
     todays_num = randint(0, 128)
     return todays_num
 
 
-def enum_sayings():
+def get_todays_saying(num_today):
     with open(file) as f:
         for (num, saying) in enumerate(f):
-            sayings = (num, saying)
-        return sayings
+            if num == num_today:
+                print (saying)
 
-
-def get_saying():
-    pass
 
 
 """
@@ -76,4 +79,7 @@ if __name__ == "__main__":
     num_lines = get_line_count(file)
     print(f"There are {num_lines} sayings in the file")
 
-    get_todays_saying()
+    num_today = get_todays_number()
+    get_todays_saying(num_today)
+
+
