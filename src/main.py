@@ -29,14 +29,16 @@ def get_line_count(file) -> int:
 
 
 def get_todays_saying():
-   todays_num = randint(0, 128)    
-   print(f"Today's saying is {todays_num}")
-   '''
+    todays_num = randint(0, 128)
+    return todays_num
+
+
+def enum_sayings():
     with open(file) as f:
         for (num, saying) in enumerate(f):
-           return(num, saying)
-    #return sample()
-    '''
+            sayings = (num, saying)
+        return sayings
+
 
 def get_saying():
     pass
@@ -72,6 +74,6 @@ if __name__ == "__main__":
         print("There is an error in authentication")
 
     num_lines = get_line_count(file)
-    print (f"There are {num_lines} sayings in the file")
+    print(f"There are {num_lines} sayings in the file")
 
     get_todays_saying()
