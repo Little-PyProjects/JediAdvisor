@@ -1,6 +1,17 @@
-import schedule
+#import schedule
 import time
+#import tweepy
 from random import sample
+
+def get_keys():
+    keys = open('../tokens/jedi_tokens.py', 'r').read().splitlines()
+    
+    api_key = keys[0]
+    api_key_secret = keys[1]
+    access_token = keys[2]
+    access_token_secret = keys[3]
+
+    return api_key, api_key_secret, access_token, access_token_secret
 
 
 def get_line_count(file) -> int:
@@ -41,8 +52,11 @@ def job():
 
 
 if __name__ == "__main__":
-    file = "../data/CloneWarsSayings.txt"
+    c = get_keys()
+    print (c)
 
-    line_count = get_line_count(file)
-    gen_order(line_count)
-    job(get_saying)
+    #file = "../data/CloneWarsSayings.txt"
+
+    #line_count = get_line_count(file)
+    #gen_order(line_count)
+    #job(get_saying)
