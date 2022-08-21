@@ -5,6 +5,12 @@ notebooks/
 # Storing tokens on github would be a really bad idea too 
 tokens/
 
+# remove the DS_Store
+.DS_Store
+
+
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
