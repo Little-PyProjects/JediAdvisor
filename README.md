@@ -1,6 +1,6 @@
 # JediAdvisor
 
-!()[images/advice.png]
+![](images/advice.png)
 
 
 
