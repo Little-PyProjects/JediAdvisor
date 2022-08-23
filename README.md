@@ -1,7 +1,6 @@
 # JediAdvisor
 
-
-https://user-images.githubusercontent.com/9368785/185765982-d85538e1-88b5-41cb-a126-1469fd919937.mov
+!()[images/advice.png]
 
 
 
