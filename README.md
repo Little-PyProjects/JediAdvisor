@@ -1,11 +1,6 @@
 # JediAdvisor
 
-<<<<<<< HEAD
-!()[https://github.com/images/advice.png]
-=======
 ![](images/advice.png)
->>>>>>> refs/remotes/origin/main
-
 
 
 Good advice is eternal. Thoughtful advice from a war that was a long time ago in a galaxy far, far away.
