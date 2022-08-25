@@ -1,6 +1,10 @@
 # JediAdvisor
 
+<<<<<<< HEAD
 !()[https://github.com/images/advice.png]
+=======
+![](images/advice.png)
+>>>>>>> refs/remotes/origin/main
 
 
 
