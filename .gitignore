@@ -4,11 +4,13 @@ notebooks/
 
 # Storing tokens on github would be a really bad idea too 
 tokens/
+constants.py
+constants.txt
+Constants.py
+Constants.txt
 
 # remove the DS_Store
 .DS_Store
-
-
 
 
 # Byte-compiled / optimized / DLL files
