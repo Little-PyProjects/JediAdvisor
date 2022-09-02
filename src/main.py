@@ -1,9 +1,4 @@
 import tokens.constants
-#import schedule
-# jimport time
-# jimport time
-# jimport time
-import tweepy
 from random import sample, randint
 
 def get_line_count(file) -> int:
@@ -34,14 +29,6 @@ def generate_saying(quotes_file_path, num_today):
                 print(saying)
 
 
-def get_keys(key_file_path):
-    with open (key_file_path) as f:
-        api_key = API_KEY
-        api_key_secret = API_KEY_SECRET
-        access_token = ACCESS_TOKEN
-        access_token_secret = ACCESS_TOKEN_SECRET
-
-
 def parse_keys(keys):
     api_key = API_key
     api_key_secret = keys[1]
@@ -49,18 +36,6 @@ def parse_keys(keys):
     access_token_secret = keys[3]
     print(api_key)
     return(api_key, api_key_secret, access_token, access_token_secret)
-
-
-"""
- def authenticate(api_key, api_key_secret, access_token, access_token_secret, saying):
-    Authenticates identity to Twitter
-
-    auth = tweepy.OAuthHandler(api_key, api_key_secret)
-    auth.set_access_token(access_token, access_token_secret)
-
-    api = tweepy.API(auth, wait_on_rate_limit=True)
-    api.update_status(saying)
-"""
 
 
 def post_saying(api, saying):
@@ -85,24 +60,20 @@ def job():
 
 
 if __name__ == "__main__":
-    key_file_path = "/tokens/constants.py"
+    key_file_path = "tokens/constants.py"
     quotes_file_path = "../data/CloneWarsSayings.txt"
     num_lines = get_line_count(quotes_file_path)
 
     num_today = get_todays_number()
 
     saying = generate_saying(quotes_file_path, num_today)
-
-    api_key, api_key_secret, access_token, access_token_secretkeys  = get_keys(key_file_path)
-    print(api_key, api_key_secret, access_token, access_token_secretkeys )
+'''
+    api_key = tokens.constants.API_KEY
+    api_key_secret = tokens.constants.API_KEY_SECRET
+    access_token = tokens.constants.ACCESS_TOKEN
+    access_token_secret = tokens.constants.ACCESS_TOKEN_SECRET
 
     print('now to parse the keys')
-    for key in keys:
-        print(key)
-
-    api_key = parse_keys(keys)
-
-
     auth = tweepy.OAuthHandler(api_key, api_key_secret)
     auth.set_access_token(access_token, access_token_secret)
 
@@ -110,4 +81,4 @@ if __name__ == "__main__":
     api.update_status(saying)
     # authenticate(api_key, api_key_secret, access_token, access_token_secret, saying)
     # post_saying(api, saying)
-
+'''
