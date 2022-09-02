@@ -1,13 +1,10 @@
-from oauthlib.oauth1.rfc5849.endpoints import access_token
-import pathlib
-# import schedule
+import tokens.constants
+#import schedule
+# jimport time
+# jimport time
 # jimport time
 import tweepy
 from random import sample, randint
-
-
-p = pathlib.Path('.')
-
 
 def get_line_count(file) -> int:
     """
@@ -27,19 +24,22 @@ def get_todays_number():
     return todays_num
 
 
-def generate_saying(num_today):
+def generate_saying(quotes_file_path, num_today):
     """
     Generates saying for the day
     """
-    with open(file) as f:
+    with open(quotes_file_path) as f:
         for (num, saying) in enumerate(f):
             if num == num_today:
                 print(saying)
 
 
-def get_keys():
-    path = Path('../tokens/constants.py') = path.open()
-    return(keys)
+def get_keys(key_file_path):
+    with open (key_file_path) as f:
+        api_key = API_KEY
+        api_key_secret = API_KEY_SECRET
+        access_token = ACCESS_TOKEN
+        access_token_secret = ACCESS_TOKEN_SECRET
 
 
 def parse_keys(keys):
@@ -85,13 +85,16 @@ def job():
 
 
 if __name__ == "__main__":
-    file = "../data/CloneWarsSayings.txt"
-    num_lines = get_line_count(file)
-    print(f"There are {num_lines} sayings in the file")
-    num_today = get_todays_number()
-    saying = generate_saying(num_today)
+    key_file_path = "/tokens/constants.py"
+    quotes_file_path = "../data/CloneWarsSayings.txt"
+    num_lines = get_line_count(quotes_file_path)
 
-    keys = get_keys()
+    num_today = get_todays_number()
+
+    saying = generate_saying(quotes_file_path, num_today)
+
+    api_key, api_key_secret, access_token, access_token_secretkeys  = get_keys(key_file_path)
+    print(api_key, api_key_secret, access_token, access_token_secretkeys )
 
     print('now to parse the keys')
     for key in keys:
