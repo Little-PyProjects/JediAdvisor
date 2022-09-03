@@ -2,6 +2,7 @@ import tweepy
 import tokens.constants
 from random import sample, randint
 
+
 def get_line_count(file) -> int:
     """
     Calculates the number of lines in file.
@@ -27,7 +28,10 @@ def generate_saying(quotes_file_path, num_today):
     with open(quotes_file_path) as f:
         for (num, saying) in enumerate(f):
             if num == num_today:
-                return(saying)
+                return (
+                    saying
+                    + "   #StarWars, #Ukraine, #UkraineRussiaWar, @DefenceU, @lightsabrqueen"
+                )
 
 
 def get_keys():
@@ -36,19 +40,20 @@ def get_keys():
     access_token = tokens.constants.ACCESS_TOKEN
     access_token_secret = tokens.constants.ACCESS_TOKEN_SECRET
 
-    return(api_key, api_key_secret, access_token, access_token_secret)
+    return (api_key, api_key_secret, access_token, access_token_secret)
 
 
 def post_saying(api_key, api_key_secret, access_token, access_token_secret, saying):
     """
     Posts saying
     """
-    print('now to parse the keys')
+    print("now to parse the keys")
     auth = tweepy.OAuthHandler(api_key, api_key_secret)
     auth.set_access_token(access_token, access_token_secret)
 
     api = tweepy.API(auth, wait_on_rate_limit=True)
     api.update_status(saying)
+
 
 """
 def job():
@@ -67,11 +72,10 @@ def job():
 if __name__ == "__main__":
     key_file_path = "tokens/constants.py"
     quotes_file_path = "../data/CloneWarsSayings.txt"
-    
+
     num_lines = get_line_count(quotes_file_path)
     num_today = get_todays_number()
-    saying    = str(generate_saying(quotes_file_path, num_today))
+    saying = str(generate_saying(quotes_file_path, num_today))
     api_key, api_key_secret, access_token, access_token_secret = get_keys()
-    
 
     post_saying(api_key, api_key_secret, access_token, access_token_secret, saying)
