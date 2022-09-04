@@ -37,4 +37,3 @@ repos:
         description: Checks for common misspellings in text files.
         entry: codespell  readme.md code.py
         language: python
-        ignore-spelling-words=/Users/alex/Library/Spelling/LocalDictionary types: [text]
