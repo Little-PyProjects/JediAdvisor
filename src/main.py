@@ -1,6 +1,6 @@
 import tweepy
 import tokens.constants
-from random import sample, randint
+from random import randint
 
 
 def get_line_count(file) -> int:
@@ -25,7 +25,7 @@ def generate_saying(quotes_file_path, num_today):
     """
     Generates saying for the day
     """
-    tags = " #StarWars, #Ukraine, #UkraineRussiaWar, @DefenceU, @lightsabrqueen"
+    tags = " #StarWars, #Ukraine, #UkraineRussiaWar, #andor, @DefenceU, @lightsabrqueen"
     with open(quotes_file_path) as f:
         for (num, saying) in enumerate(f):
             if num == num_today:
