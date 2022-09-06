@@ -1,8 +1,10 @@
-import tweepy
-import tokens.constants
-from random import randint
-import schedule
 import time
+from random import randint
+
+import schedule
+import tweepy
+
+import tokens.constants
 
 
 def get_line_count(file) -> int:
