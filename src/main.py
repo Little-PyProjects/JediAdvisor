@@ -1,6 +1,8 @@
 import tweepy
 import tokens.constants
 from random import randint
+import schedule
+import time
 
 
 def get_line_count(file) -> int:
@@ -46,6 +48,7 @@ def post_saying(api_key, api_key_secret, access_token, access_token_secret, sayi
     Posts saying
     """
     print("Done. Now to post the saying")
+
     auth = tweepy.OAuthHandler(api_key, api_key_secret)
     auth.set_access_token(access_token, access_token_secret)
 
@@ -53,18 +56,8 @@ def post_saying(api_key, api_key_secret, access_token, access_token_secret, sayi
     api.update_status(saying)
 
 
-"""
 def job():
     print("I'm working...")
-
-    schedule.every(2).minutes.do(job)
-    # schedule.every().hour.do(job)
-    # schedule.every().day.at("10:30").do(job)lck
-
-    while 1:
-        schedule.run_pending()
-        time.sleep(1)
-"""
 
 
 if __name__ == "__main__":
@@ -76,4 +69,12 @@ if __name__ == "__main__":
     saying = str(generate_saying(quotes_file_path, num_today))
     api_key, api_key_secret, access_token, access_token_secret = get_keys()
 
-    post_saying(api_key, api_key_secret, access_token, access_token_secret, saying)
+    schedule.every(1).day.do(
+        post_saying(api_key, api_key_secret, access_token, access_token_secret, saying)
+    )
+    # schedule.every().hour.do(job)
+    # schedule.every().day.at("10:30").do(job)lck
+
+    while 1:
+        schedule.run_pending()
+        time.sleep(1)
