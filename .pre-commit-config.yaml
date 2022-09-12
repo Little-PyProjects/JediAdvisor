@@ -37,3 +37,8 @@ repos:
         description: Checks for common misspellings in text files.
         entry: codespell  readme.md code.py
         language: python
+
+  - repo: https://github.com/pre-commit/mirrors-autopep8
+    rev: v1.7.0
+    hooks:
+    -   id: autopep8
