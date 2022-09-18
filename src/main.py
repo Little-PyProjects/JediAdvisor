@@ -53,20 +53,6 @@ def post_saying(api_key, api_key_secret, access_token, access_token_secret, sayi
     api.update_status(saying)
 
 
-"""
-def job():
-    print("I'm working...")
-
-    schedule.every(2).minutes.do(job)
-    # schedule.every().hour.do(job)
-    # schedule.every().day.at("10:30").do(job)lck
-
-    while 1:
-        schedule.run_pending()
-        time.sleep(1)
-"""
-
-
 if __name__ == "__main__":
     key_file_path = "tokens/constants.py"
     quotes_file_path = "../data/CloneWarsSayings.txt"
