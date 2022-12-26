@@ -25,7 +25,7 @@ def generate_saying(quotes_file_path, num_today):
     """
     Generates saying for the day
     """
-    tags = " #StarWars, #Ukraine, #UkraineRussiaWar, #andor, @DefenceU, @lightsabrqueen"
+    tags = "#StarWars, #TheCloneWars: #andor, #NAFO, #NAFOfellas, #Ukraine"
     with open(quotes_file_path) as f:
         for (num, saying) in enumerate(f):
             if num == num_today:
