@@ -8,4 +8,4 @@ Good advice is eternal. Thoughtful advice from a war that was a long time ago in
 <br>
 
 ## What it is:
-A python powered twitterbot that posts an aphorism from the Clone Wars series each day.
+A python script that posts an aphorism from the Clone Wars series.
