@@ -8,4 +8,4 @@ Good advice is eternal. Thoughtful advice from a war that was a long time ago in
 <br>
 
 ## What it is:
-A python script that posts an aphorism from the Clone Wars series.
+A python script that posts an aphorism from the Clone Wars series or select sayings from the rest of Star Wars.
